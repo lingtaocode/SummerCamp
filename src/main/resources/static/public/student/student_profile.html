@@ -1,0 +1,302 @@
+<!-- 
+  Developed by: Zeen Wu
+  Creat Date: May 30, 2022 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- common CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- common js -->
+  <script src="../js/common.js"></script>
+  <link rel="icon" href="../images/favicon.png" type="image/gif" sizes="16x16">
+
+  <!-- module CSS-->
+  <link rel="stylesheet" href="css/student_profile.css">
+  <!-- module js-->
+  <script src="js/student_profile.js"></script>
+  <title>My Profile</title>
+</head>
+
+<body onload="startup();">
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+
+  <div class="container">
+    <!-- Template nav bar start          -->
+    <nav class="navbar navbar-expand-lg navbar-light" id="nav_top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../home/home.html">MYCAMP</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../home/home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../about/about.html">About Us</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="../club/clubs.html">Our Club</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="../contact/contact.html">Contact</a>
+            </li>
+          </ul>
+
+          <div id="user">
+            <form class="d-flex">
+              <input class="form-control me-1" type="Email" placeholder="Email" aria-label="Email" id="email">
+              <input class="form-control me-1" type="password" placeholder="Password" aria-label="Password" id="pword">
+              <button class="btn btn-outline-success" type="button" id="login" onclick="userLogin();">Login</button>
+              <a class="nav-link" href="../student/student_register.html">Register</a>
+              
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+    <!-- Template nav bar end          -->
+
+    <!-- sub module title           -->
+    <div class="container-fluid" id="sub_title">
+      <p class="display-5" id="p_welcome">Welcome  </p>
+    </div>
+
+    <!-- sub module title end          -->
+
+    <!-- sub module nav bar           -->
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../home/home.html">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">My Profile</li>
+      </ol>
+    </nav>
+
+    <!-- sub module nav bar end         -->
+
+    <div class="container" id="div_main">
+      <!-- sub module main     -->
+
+      <h4 class="display-6">Profile information:</h4>
+      <div class="box">
+        <form id="register" class="row g-3 needs-validation" novalidate action="#" method="post">
+          <div class="col-md-4">
+            <label for="fname" class="form-label">First name</label>
+            <input type="text" class="form-control" id="fname" value="" required>
+            <div class="invalid-feedback">
+              Please provide first name.
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="lname" class="form-label">Last name</label>
+            <input type="text" class="form-control" id="lname" value="" required>
+            <div class="invalid-feedback">
+              Please provide last name.
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="age" class="form-label">Age</label>
+            <select class="form-select" id="age" required>
+              <option selected disabled value="">Choose...</option>
+              <option value="6">6 years old</option>
+              <option value="7">7 years old</option>
+              <option value="8">8 years old</option>
+              <option value="9">9 years old</option>
+              <option value="10">10 years old</option>
+              <option value="11">11 years old</option>
+              <option value="12">12 years old</option>
+              <option value="13">13 years old</option>
+              <option value="14">14 years old</option>
+              <option value="15">15 years old</option>
+              <option value="16">16 years old</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select your age.
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="address" class="form-label">address</label>
+            <input type="text" class="form-control" id="address" required>
+            <div class="invalid-feedback">
+              Please provide a valid address.
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="text" class="form-control" id="phone" placeholder="(514)123-4567" required>
+            <div class="invalid-feedback">
+              Please provide a valid phone number.
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="stu_email" class="form-label">Email</label>
+            <input type="email" disabled class="form-control" id="stu_email" placeholder="name@example.com" >
+            <div class="invalid-feedback">
+              Please provide a valid Email.
+            </div>
+          </div>
+          <div class="col-12">
+              &nbsp;
+          </div>
+          <div class="col-12">
+            <button class="btn  btn-primary" type="button" id="update" onclick="updateProfile()">Update</button>
+          </div>
+          <div class="alert alert-primary" role="alert" id="div_updateSuccessed" name="alert_msg">
+            Your profile has been update!
+          </div>
+          
+        </form>
+      </div>
+
+
+      <div class="row">
+
+        <div class="col-12" id="course_list"> </div>
+
+        <div class="col-12 y-2">
+          <button class="btn  btn-primary" type="button" id="quiteCourse" onclick="quiteCourse()">Quite Course</button>
+          <br><br>
+        </div>
+        <div class="alert alert-primary" role="alert" id="div_quiteSuccessed" name="alert_msg">
+          Your course has been update!
+        </div>
+
+      </div>
+    </div><!-- sub module main end       -->
+
+
+    <!-- Template footer start          -->
+    <footer class="text-center text-lg-start bg-light text-muted">
+      <!-- Section: Social media -->
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <div class="me-5 d-none d-lg-block">
+          <span>Get connected with us on social networks:</span>
+        </div>
+        <div class="me-5 d-none d-lg-block">
+          <img src="../images/social.jpg" alt="" class="">
+        </div>
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Section: Links  -->
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                <i class="fas fa-gem me-3"></i>MyCamp
+              </h6>
+              <p>
+               
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                Service
+              </h6>
+              <p>
+                <a href="#!" class="text-reset">Angular</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">React</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Vue</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Laravel</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                Useful links
+              </h6>
+              <p>
+                <a href="#!" class="text-reset">Pricing</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Settings</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Orders</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Help</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                Contact
+              </h6>
+              <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+              <p>
+                <i class="fas fa-envelope me-3"></i>
+                info@mycamp.com
+              </p>
+              <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+              <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+
+      <!-- Copyright -->
+      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2021 Copyright:
+        <a class="text-reset fw-bold" href="#">mycamp.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Template footer end         -->
+
+
+
+  </div>
+</body>
+
+</html>

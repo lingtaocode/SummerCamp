@@ -1,0 +1,34 @@
+/**
+ * create by Zeen Wu
+ * on May 13, 2022
+*/
+
+:root {
+    --color-nav:#fefefe;
+}
+
+#nav_top {
+    background-color: var(--color-nav);
+}
+
+#sub_title{
+    height: 8rem;
+    padding-top: 3rem;
+    background-image: url('../images/bg_title.jpg');
+    color: #ffffff;
+    margin-bottom: 2rem;
+}
+
+.box {
+  
+    border: 1px solid #cecece;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+#sub_nav {
+    margin-bottom: 3rem;
+}
+
+
+            

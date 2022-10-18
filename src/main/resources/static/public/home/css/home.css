@@ -1,0 +1,21 @@
+/**
+ * create by Zeen Wu
+ * on May 13, 2022
+*/
+
+#div_bg{
+    background-image: url(../images/bg.jpg);
+    height: 500px;
+}
+
+#div_mask{
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#event_name {
+    background: linear-gradient(to right, rgb(197, 93, 93), rgb(2, 255, 65), rgb(250, 207, 68));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+       
